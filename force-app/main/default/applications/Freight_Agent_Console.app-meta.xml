@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#4CAF50</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Freight Agent Lightning App optimized for managing shipments and cargo with a minimalist, security-focused interface.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Freight Agent Console</label>
+    <navType>Standard</navType>
+    <tabs>Shipment__c</tabs>
+    <tabs>Cargo__c</tabs>
+    <tabs>Customs_Document__c</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <uiType>Lightning</uiType>
+    <setupExperience>all</setupExperience>
+</CustomApplication>
