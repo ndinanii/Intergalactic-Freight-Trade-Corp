@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Grants Freight Agents access to Shipment, Cargo, and Customs Document objects with appropriate field-level security</description>
+    <description>Grants Operations Managers full access to Shipment, Cargo, and Customs Document objects with complete field-level permissions</description>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Freight Agent Access</label>
+    <label>Operations Manager Access</label>
     
     <!-- Shipment Object Permissions -->
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Shipment__c</object>
-        <viewAllRecords>false</viewAllRecords>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     
     <!-- Cargo Object Permissions -->
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Cargo__c</object>
-        <viewAllRecords>false</viewAllRecords>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     
     <!-- Customs Document Object Permissions -->
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Customs_Document__c</object>
-        <viewAllRecords>false</viewAllRecords>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     
-    <!-- Shipment Field Permissions -->
+    <!-- Shipment Field Permissions (Full Access) -->
     <fieldPermissions>
         <editable>true</editable>
         <field>Shipment__c.AccountId__c</field>
@@ -64,17 +64,17 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Shipment__c.Discount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Shipment__c.Assigned_Agent__c</field>
         <readable>true</readable>
     </fieldPermissions>
     
-    <!-- Cargo Field Permissions -->
+    <!-- Cargo Field Permissions (Full Access) -->
     <!-- Note: Shipment__c is a required master-detail field, permissions inherited from object -->
     <fieldPermissions>
         <editable>true</editable>
@@ -92,7 +92,7 @@
         <readable>true</readable>
     </fieldPermissions>
     
-    <!-- Customs Document Field Permissions -->
+    <!-- Customs Document Field Permissions (Full Access) -->
     <!-- Note: Shipment__c and Cargo__c are required master-detail fields, permissions inherited from object -->
     
     <!-- Tab Visibility -->
