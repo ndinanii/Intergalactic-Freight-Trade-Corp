@@ -1,0 +1,78 @@
+title Salesforce Shipment & Cargo Data Model
+
+// Standard Objects
+Account (Standard) [icon: briefcase, color: green] {
+  id string pk
+  name string
+  type string
+  industry string
+  createdDate datetime
+}
+
+Contact (Standard) [icon: user, color: blue] {
+  id string pk
+  firstName string
+  lastName string
+  email string
+  phone string
+  accountId string
+  createdDate datetime
+}
+
+Opportunity (Standard) [icon: dollar-sign, color: orange] {
+  id string pk
+  name string
+  stage string
+  amount number
+  closeDate datetime
+  accountId string
+  createdDate datetime
+}
+
+// Custom Objects
+Shipment__c [icon: truck, color: purple] {
+  id string pk
+  name string
+  AccountId string // FK to Account
+  ContactId string // FK to Contact
+  OpportunityId string // FK to Opportunity
+  ETA__c datetime
+  Departure_Date__c datetime
+  Discount__c percent
+  Assigned_Agent__c string // Lookup(User)
+  createdDate datetime
+}
+
+Cargo__c [icon: package, color: yellow] {
+  id string pk
+  name string
+  Shipment__c string // Master-Detail to Shipment__c
+  Category__c string // Picklist
+  Weight__c number
+  Shipping_Method__c string // Picklist
+  createdDate datetime
+}
+
+Customs_Document__c [icon: file-text, color: red] {
+  id string pk
+  name string
+  Shipment__c string // Master-Detail to Shipment__c
+  Cargo__c string // Master-Detail to Cargo__c
+  createdDate datetime
+}
+
+// Relationships
+
+// Lookup (dashed, many Shipments to one Account/Contact/Opportunity)
+Shipment__c.AccountId > Account (Standard).id
+Shipment__c.ContactId > Contact (Standard).id
+Shipment__c.OpportunityId > Opportunity (Standard).id
+
+// Master-Detail (solid, one Shipment to many Cargo)
+Cargo__c.Shipment__c > Shipment__c.id
+
+// Master-Detail (solid, one Shipment to many Customs_Document)
+Customs_Document__c.Shipment__c > Shipment__c.id
+
+// Master-Detail (solid, one Cargo to many Customs_Document)
+Customs_Document__c.Cargo__c > Cargo__c.id

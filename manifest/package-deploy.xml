@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Shipment__c</members>
+        <members>Cargo__c</members>
+        <members>Customs_Document__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Shipment__c</members>
+        <members>Cargo__c</members>
+        <members>Customs_Document__c</members>
+        <name>CustomTab</name>
+    </types>
+    <version>65.0</version>
+</Package>
