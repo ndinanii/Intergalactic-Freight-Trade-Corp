@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Weight_Cannot_Exceed_Capacity</fullName>
+    <active>true</active>
+    <description>Ensures that the total cargo weight does not exceed the ship's maximum capacity.</description>
+    <errorConditionFormula>Total_Cargo_Weight__c &gt; Ship_Capacity__c</errorConditionFormula>
+    <errorMessage>The total weight of all cargo items cannot exceed the ship&apos;s maximum capacity.</errorMessage>
+</ValidationRule>

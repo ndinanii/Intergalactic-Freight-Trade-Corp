@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkflowFieldUpdate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Set_Discount_Approved_Checkbox</fullName>
+    <description>Sets the Discount Approved checkbox to true when the approval process is completed</description>
+    <field>Discount_Approved__c</field>
+    <literalValue>true</literalValue>
+    <name>Set Discount Approved Checkbox</name>
+    <notifyAssignee>false</notifyAssignee>
+    <operation>Literal</operation>
+    <protected>false</protected>
+    <reevaluateOnChange>false</reevaluateOnChange>
+</WorkflowFieldUpdate>
